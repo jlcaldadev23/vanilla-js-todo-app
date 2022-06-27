@@ -9,20 +9,91 @@
     <title>Todo</title>
   </head>
   <body>
-    <div class="todo">
-      <h1>Todo</h1>
-      <form name="todo--form">
-        <input type="text" name="todo--input" class="bg-slate-200" />
-        <button
-          type="submit"
-          name="todo--submit"
-          class="p-2 bg-slate-500 rounded"
-        >
-          Add
-        </button>
-      </form>
-      <ul class="todo--list"></ul>
-    </div>
-    <script src="script.js"></script>
+    <main class="bg-white">
+      <!-- HEADER SECTION -->
+      <header class="bg-yellow-50 flex justify-between gap-4 px-3 py-4 mb-6">
+        <div class="flex gap-6">
+          <h1 class="text-4xl uppercase text-amber-500 font-bold">📓Todo</h1>
+          <input
+            type="text"
+            name="search-bar"
+            class="rounded p-1 text-gray-400 focus:text-gray-700 placeholder:italic flex-1 focus:bg-zinc-100 focus:outline-none"
+            placeholder="🔎 Search for todo..."
+            data-id="search"
+          />
+        </div>
+        <div class="date text-gray-400">
+          <span data-id="data-date-info">DATE</span>
+        </div>
+      </header>
+      <!-- INPUT SECTION -->
+      <div class="p-4 border-b">
+        <form id="form-add-label" data-id="data-add-label-form"></form>
+        <form id="form-remove-label" data-id="data-remove-label-form">
+          <!-- <input type="submit" hidden /> -->
+        </form>
+        <form name="input-form" data-id="data-input-form"></form>
+        <div class="flex gap-4">
+          <div class="flex flex-col flex-1 py-2">
+            <input
+              type="text"
+              name="title"
+              placeholder="🖊 Add Title"
+              class="focus:bg-zinc-100 rounded border-b mb-2 focus:outline-none placeholder:text-gray-400"
+              data-id="data-title"
+            />
+            <textarea
+              name="text"
+              class="focus:bg-zinc-100 rounded focus:outline-none border-l border-r border-b placeholder:text-gray-400"
+              id=""
+              cols="30"
+              rows="5"
+              placeholder="🖊 List the items here..."
+              data-id="data-text"
+            ></textarea>
+          </div>
+          <div class="flex flex-col py-2 gap-2">
+            <input
+              type="text"
+              name="todo--label"
+              placeholder="➕ Add label..."
+              class="focus:bg-emerald-50 rounded border-b mb-2 focus:outline-none placeholder:text-gray-400"
+              data-id="data-add-label"
+              form="form-add-label"
+            />
+            <input
+              type="text"
+              name="todo--label"
+              placeholder="➖ Remove label..."
+              class="focus:bg-rose-50 border-b rounded mb-2 focus:outline-none focus:bg-zinc-100 placeholder:text-gray-400"
+              data-id="data-remove-label"
+              form="form-remove-label"
+            />
+            <select
+              name="labels"
+              id="select-labels"
+              data-id="data-select-labels"
+              class="text-gray-400 focus:outline-none border-b"
+            >
+              <option value="general">🖊 Choose Label...</option>
+            </select>
+            <button
+              type="submit"
+              name="todo--submit"
+              class="p-2 bg-amber-300 hover:bg-amber-400 uppercase text-white font-bold rounded flex-1"
+            >
+              ✅Add
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- OUTPUT SECTION -->
+
+      <div>
+        <ul class="todo--list"></ul>
+      </div>
+    </main>
+    <script type="module" src="script.js"></script>
+    <!-- <script src="./modules/date.js"></script> -->
   </body>
 </html>
