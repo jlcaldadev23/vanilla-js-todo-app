@@ -1,9 +1,12 @@
 import { labelSelectEl } from '../../script.js';
+import { clearOptionsExceptFirst } from '../abstract.js';
 
 function generateLabelSelection(labelList) {
   const labelOptionEls = labelList.map((label) => makeOption(label));
-  clearOptions();
+  clearOptionsExceptFirst(labelSelectEl);
+  labelOptionEls.splice(0, 1);
   labelSelectEl.append(...labelOptionEls);
+  console.log(labelList);
 }
 
 function makeOption(label) {
@@ -12,9 +15,4 @@ function makeOption(label) {
   return labelOptionEl;
 }
 
-function clearOptions() {
-  while (labelSelectEl.childNodes.length > 2) {
-    labelSelectEl.removeChild(labelSelectEl.lastChild);
-  }
-}
 export { generateLabelSelection };

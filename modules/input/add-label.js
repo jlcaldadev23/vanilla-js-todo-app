@@ -11,8 +11,6 @@ function handleAddLabel(e, labelList) {
     `[data-id="data-add-label"]`
   ).value;
 
-  console.log(addLabelInputEl);
-
   if (
     addLabelInputEl &&
     !labelList.includes(addLabelInputEl) &&
@@ -20,10 +18,7 @@ function handleAddLabel(e, labelList) {
   ) {
     labelList.push(addLabelInputEl);
     addLabelFormEl.reset();
-    console.log(labelSelectEl);
     generateLabelSelection(labelList);
-    // this.res
-    console.log(labelList);
   } else {
     alert('Label is already present or input is empty');
     removeLabelFormEl.reset();

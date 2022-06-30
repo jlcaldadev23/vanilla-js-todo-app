@@ -27,12 +27,16 @@
         </div>
       </header>
       <!-- INPUT SECTION -->
-      <div class="p-4 border-b">
+      <div class="p-4 border-b mb-4">
         <form id="form-add-label" data-id="data-add-label-form"></form>
         <form id="form-remove-label" data-id="data-remove-label-form">
           <!-- <input type="submit" hidden /> -->
         </form>
-        <form name="input-form" data-id="data-input-form"></form>
+        <form
+          id="input-form"
+          name="input-form"
+          data-id="data-input-form"
+        ></form>
         <div class="flex gap-4">
           <div class="flex flex-col flex-1 py-2">
             <input
@@ -41,6 +45,7 @@
               placeholder="🖊 Add Title"
               class="focus:bg-zinc-100 rounded border-b mb-2 focus:outline-none placeholder:text-gray-400"
               data-id="data-title"
+              form="input-form"
             />
             <textarea
               name="text"
@@ -50,6 +55,7 @@
               rows="5"
               placeholder="🖊 List the items here..."
               data-id="data-text"
+              form="input-form"
             ></textarea>
           </div>
           <div class="flex flex-col py-2 gap-2">
@@ -74,6 +80,7 @@
               id="select-labels"
               data-id="data-select-labels"
               class="text-gray-400 focus:outline-none border-b"
+              form="input-form"
             >
               <option value="general">🖊 Choose Label...</option>
             </select>
@@ -81,6 +88,7 @@
               type="submit"
               name="todo--submit"
               class="p-2 bg-amber-300 hover:bg-amber-400 uppercase text-white font-bold rounded flex-1"
+              form="input-form"
             >
               ✅Add
             </button>
@@ -89,9 +97,7 @@
       </div>
       <!-- OUTPUT SECTION -->
 
-      <div>
-        <ul class="todo--list"></ul>
-      </div>
+      <div data-id="data-output-container" class="flex gap-2 flex-col"></div>
     </main>
     <script type="module" src="script.js"></script>
     <!-- <script src="./modules/date.js"></script> -->

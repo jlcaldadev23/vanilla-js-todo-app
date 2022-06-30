@@ -20,7 +20,6 @@ function handleRemoveLabel(e, labelList) {
     labelList.splice(labelList.indexOf(removeLabelInputEl), 1);
     removeLabelFormEl.reset();
     generateLabelSelection(labelList);
-    console.log(labelList);
   } else {
     alert('Label is not present');
     removeLabelFormEl.reset();
