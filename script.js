@@ -12,6 +12,7 @@ handleDate();
 
 //LABELS
 export const labelList = ['general'];
+
 export const labelSelectEl = document.querySelector(
   `[data-id="data-select-labels"]`
 );

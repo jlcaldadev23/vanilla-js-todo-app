@@ -43,7 +43,7 @@ export function handleInputForm(e, itemList, labelList) {
 
 export function handleClickItem(e, itemList, labelList, archivedList) {
   if (e.target.matches('button')) {
-    let itemId = e.target.parentElement.parentElement.dataset.id;
+    let itemId = e.target.closest('li').dataset.id;
     let itemIndex = itemList.findIndex((item) => item.id == itemId);
     const archivedItem = itemList.splice(itemIndex, 1);
     archivedItem[0].property.isArchived = true;
@@ -51,7 +51,7 @@ export function handleClickItem(e, itemList, labelList, archivedList) {
     populateItems(itemList, labelList);
     console.log(archivedList);
   } else if (e.target.matches('input[type="checkbox"]')) {
-    let itemId = e.target.parentElement.parentElement.dataset.id;
+    let itemId = e.target.closest('li').dataset.id;
     let itemIndex = itemList.findIndex((item) => item.id == itemId);
     itemList[itemIndex].property.isFinished = e.target.checked;
     populateItems(itemList, labelList);
